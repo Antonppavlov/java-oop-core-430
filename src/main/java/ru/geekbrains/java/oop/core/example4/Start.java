@@ -1,33 +1,30 @@
 package ru.geekbrains.java.oop.core.example4;
 
+import java.io.File;
+import java.util.Scanner;
+
 public class Start {
     public static void main(String[] args) {
-        Cat tom = new Cat();
-        tom.setName("Том");
+        System.out.println("Начало программы");
 
-        Dog spike = new Dog();
-        spike.setName("Spike");
+        File file = new File("src/main/resources/lessons12.txt");
+        System.out.println("Сообщение до создания Scanner");
 
-        Cat bubbles = new Cat();
-        bubbles.setName("Шарик");
 
-        Dog barsik = new Dog();
-        barsik.setName("Барсик");
+        try {
+            String name = null;
+            name.equals("Имя");
 
-        Cat barmaglog = new Cat();
-        barmaglog.setName("Бармаглот");
+            Scanner scanner = new Scanner(file);
 
-        Dog lord = new Dog();
-        lord.setName("Лорд");
-
-        CatFood catFood = new CatFood();
-        catFood.setProductName("PurinaOne");
-
-        Animal[] animals = {tom, spike, bubbles, barsik, barmaglog, lord};
-
-        for (Animal animal: animals){
-            animal.eatCatFood(catFood);
+        } catch (Throwable e) {
+            e.printStackTrace();
         }
 
+
+        System.out.println("Сообщение после создания Scanner");
+
+
+        System.out.println("Конец программы");
     }
 }

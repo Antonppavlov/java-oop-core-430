@@ -1,31 +1,26 @@
 package ru.geekbrains.java.oop.core.example6;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
 public class Start {
+
     public static void main(String[] args) {
-        Cat tom = new Cat("Том");
-        System.out.println(tom.getName().equals("Том"));
+        File file = new File("src/main/resources/lessons12.txt");
 
-        Dog spike = new Dog("Spike");
-        Cat bubbles = new Cat("Шарик");
-        Dog barsik = new Dog("Барсик");
-        Cat barmaglog = new Cat("Бармаглот");
-        Dog lord = new Dog("Лорд");
+        System.out.println("Конец программы");
 
-        Mouse larry = new Mouse("Ларри Мышь");
-
-        CatFood catFood = new CatFood("PurinaOne");
-
-        Animal[] animals = {tom, spike, bubbles, barsik, barmaglog, lord, larry};
-
-        for (Animal animal : animals) {
-            animal.eatCatFood(catFood);
+        try {
+            System.out.println("Блок 1 до Scanner");
+            Scanner scanner = new Scanner(file);
+            System.out.println("Блок 1 после Scanner");
+        } catch (FileNotFoundException e) {
+            System.out.println("Блок 2");
+        }finally {
+            System.out.println("Блок 3");
         }
 
-        HomeWork[] homeWork = {tom, spike, bubbles, barsik, barmaglog, lord};
-
-        for (HomeWork animalHomeWork : homeWork) {
-            animalHomeWork.sayYouHomeWork();
-        }
-
+        System.out.println("Начало программы");
     }
 }

@@ -2,13 +2,27 @@ package ru.geekbrains.java.oop.core.example1;
 
 public class Start {
     public static void main(String[] args) {
-        Cat tom = new Cat();
-        tom.name = "Том";
 
-        CatFood catFood = new CatFood();
-        catFood.productName = "PurinaOne";
+        System.out.println("Привет мир!");
 
-        tom.eat(catFood);
+        try {
+            Cat.arithmetic();
+        } catch (ArithmeticException e) {
+            e.printStackTrace();
+        }
 
+
+        String name = null;
+
+
+        try {
+            name.equals("Имя");
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println("Пока мир!");
     }
+
 }
