@@ -11,9 +11,9 @@ import ru.geekbrains.java.oop.core.hw.participants.Runner;
 
 public class Start {
     public static void main(String[] args) {
-        Runner catTom = new Cat("Tom", 10, 5);
-        Runner catLarry = new Cat("Larry", 7, 3);
-        Runner catBoris = new Cat("Boris", 15, 8);
+        Cat catTom = new Cat("Tom", 10, 5);
+        Cat catLarry = new Cat("Larry", 7, 3);
+        Cat catBoris = new Cat("Boris", 15, 8);
 
         Runner humanMax = new Human("Max", 13, 4);
         Runner humanAnna = new Human("Anna", 10, 2);
@@ -31,10 +31,12 @@ public class Start {
                 new Treadmill(10),
                 new Wall(7),
                 new Treadmill(14),
-                new Treadmill(15)
+                new Treadmill(15),
         };
 
         System.out.println("Гонка началась!");
+
+
         for (int i = 0; i < obstacles.length; i++) {
             System.out.println("\n\nИспытание " + (i + 1));
 
