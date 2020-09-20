@@ -53,12 +53,7 @@ public class Start {
     }
 
     private static int convertIntAndSum(String[][] twoDimensionalStringArray) {
-        if (!(twoDimensionalStringArray.length == 4 & twoDimensionalStringArray[0].length == 4)) {
-            throw new MyArraySizeException(
-                    "Ожидаемый размер массива 4х4, " +
-                            "реальный: " + twoDimensionalStringArray.length + "x" + twoDimensionalStringArray[0].length);
-        }
-
+        checkArray(twoDimensionalStringArray);
         int sum = 0;
         for (int x = 0; x < twoDimensionalStringArray.length; x++) {
             String[] lineInArray = twoDimensionalStringArray[x];
@@ -72,5 +67,13 @@ public class Start {
         }
 
         return sum;
+    }
+
+    private static void checkArray(String[][] twoDimensionalStringArray) {
+        if (!(twoDimensionalStringArray.length == 4 & twoDimensionalStringArray[0].length == 4)) {
+            throw new MyArraySizeException(
+                    "Ожидаемый размер массива 4х4, " +
+                            "реальный: " + twoDimensionalStringArray.length + "x" + twoDimensionalStringArray[0].length);
+        }
     }
 }
