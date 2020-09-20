@@ -16,9 +16,11 @@ public class SecondTask {
         phonebook.add("Иванов", "+74954433221");
         phonebook.add("Сидоров", "89115222334");
         phonebook.add("Петров", "89064422114");
+        phonebook.add("Петров", "89064422114");
+        phonebook.add("Петров", "89064422113");
 
-        phonebook.get("Иванов");
-        phonebook.get("Сидоров");
-        phonebook.get("Петров");
+        System.out.println(phonebook.get("Иванов"));
+        System.out.println(phonebook.get("Сидоров"));
+        System.out.println(phonebook.get("Петров"));
     }
 }
