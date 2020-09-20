@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.demo.example1;
+package ru.geekbrains.java.oop.core.example1;
 
 public class Cat {
 

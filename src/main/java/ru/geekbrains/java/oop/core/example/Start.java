@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.demo.example;
+package ru.geekbrains.java.oop.core.example;
 
 public class Start {
     public static void main(String[] args) {
