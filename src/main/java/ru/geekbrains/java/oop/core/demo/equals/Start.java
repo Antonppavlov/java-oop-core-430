@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.equals;
+package ru.geekbrains.java.oop.core.demo.equals;
 
 public class Start {
     public static void main(String[] args) {

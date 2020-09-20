@@ -1,9 +1,9 @@
-package ru.geekbrains.java.oop.core.map;
+package ru.geekbrains.java.oop.core.demo.map;
 
-public class Human {
-    private String name;
+public class Cat {
+    private String name ;
 
-    public Human(String name) {
+    public Cat(String name) {
         this.name = name;
     }
 
@@ -13,7 +13,7 @@ public class Human {
 
     @Override
     public String toString() {
-        return "Human{" +
+        return "Cat{" +
                 "name='" + name + '\'' +
                 '}';
     }

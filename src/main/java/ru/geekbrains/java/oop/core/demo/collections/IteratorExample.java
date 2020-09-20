@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.collections;
+package ru.geekbrains.java.oop.core.demo.collections;
 
 import java.util.ArrayList;
 import java.util.Iterator;

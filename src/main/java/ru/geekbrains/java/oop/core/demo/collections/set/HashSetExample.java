@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.collections.set;
+package ru.geekbrains.java.oop.core.demo.collections.set;
 
 import java.util.ArrayList;
 import java.util.Collection;

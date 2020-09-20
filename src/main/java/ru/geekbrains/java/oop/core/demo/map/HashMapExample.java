@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.map;
+package ru.geekbrains.java.oop.core.demo.map;
 
 import java.util.Collection;
 import java.util.HashMap;

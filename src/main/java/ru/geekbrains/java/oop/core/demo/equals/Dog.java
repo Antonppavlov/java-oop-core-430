@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.equals;
+package ru.geekbrains.java.oop.core.demo.equals;
 
 import java.util.Objects;
 

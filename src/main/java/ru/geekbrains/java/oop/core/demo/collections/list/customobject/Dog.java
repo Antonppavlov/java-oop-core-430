@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.collections.list.customobject;
+package ru.geekbrains.java.oop.core.demo.collections.list.customobject;
 
 import java.util.Objects;
 

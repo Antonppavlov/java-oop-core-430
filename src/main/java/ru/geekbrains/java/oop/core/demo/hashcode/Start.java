@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.hashcode;
+package ru.geekbrains.java.oop.core.demo.hashcode;
 
 public class Start {
     public static void main(String[] args) {
