@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.example6;
+package ru.geekbrains.java.oop.core.demo.example6;
 
 import java.io.File;
 import java.io.FileNotFoundException;

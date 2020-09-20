@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.example5;
+package ru.geekbrains.java.oop.core.demo.example5;
 
 public class CanCalculateTheSquareNegativeNumberException extends Exception {
     public CanCalculateTheSquareNegativeNumberException() {
