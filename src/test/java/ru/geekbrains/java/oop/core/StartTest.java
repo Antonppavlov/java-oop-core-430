@@ -11,8 +11,9 @@ import ru.geekbrains.java.oop.core.participants.Robot;
 import ru.geekbrains.java.oop.core.participants.Runner;
 
 public class StartTest {
+
     @Test
-    public void checkMethodTrace() {
+    public void checkMethodTraceTest() {
         Cat catTom = new Cat("Tom", 10, 5);
         Cat catLarry = new Cat("Larry", 7, 3);
         Cat catBoris = new Cat("Boris", 15, 8);
