@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.hw.participants;
+package ru.geekbrains.java.oop.core.participants;
 
 public interface Runner {
 

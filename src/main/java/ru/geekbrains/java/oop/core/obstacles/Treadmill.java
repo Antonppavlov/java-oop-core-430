@@ -1,6 +1,6 @@
-package ru.geekbrains.java.oop.core.hw.obstacles;
+package ru.geekbrains.java.oop.core.obstacles;
 
-import ru.geekbrains.java.oop.core.hw.participants.Runner;
+import ru.geekbrains.java.oop.core.participants.Runner;
 
 public class Treadmill implements Obstacles {
     private int length;

@@ -1,4 +1,4 @@
-package ru.geekbrains.java.oop.core.hw.participants;
+package ru.geekbrains.java.oop.core.participants;
 
 public class Robot implements Runner {
     private String name;
