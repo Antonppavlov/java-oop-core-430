@@ -11,9 +11,10 @@ import java.nio.charset.StandardCharsets;
 public class WebServer {
     public static void main(String[] args) throws IOException {
         System.out.println("Наш сервер начал работу");
-
         ServerSocket serverSocket = new ServerSocket(8080);
-        Socket socket = serverSocket.accept();
+
+        while (true) {
+            Socket socket = serverSocket.accept();
 
 //        Можно считать поток байт
 //        нам нужно преобразовать чтобы мы могли читать текст
@@ -24,29 +25,37 @@ public class WebServer {
 //        inputStreamReader.ready();
 //        inputStreamReader.read();
 
-        //Создаем объект BufferedReader который будет накапливать исходящие из InputStreamReader символы
-        //накапливать будет их уже построчно и в формате строки
+            //Создаем объект BufferedReader который будет накапливать исходящие из InputStreamReader символы
+            //накапливать будет их уже построчно и в формате строки
 
-        try (BufferedReader bufferedReader = new BufferedReader(
-                new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
-             PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
-        ) {
+            try (BufferedReader bufferedReader = new BufferedReader(
+                    new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+                 PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
+            ) {
 
-            //ждем пока не заполнится строка
-            while (!bufferedReader.ready()) ;
+                //ждем пока не заполнится строка
+                while (!bufferedReader.ready()) ;
 
-            while (bufferedReader.ready()) {
-                System.out.println(bufferedReader.readLine());
+                String typeAndMethodRequest = bufferedReader.readLine();
+
+                while (bufferedReader.ready()) {
+                    System.out.println(bufferedReader.readLine());
+                }
+
+                String[] split = typeAndMethodRequest.split(" ");
+                System.out.println(split[0]);
+                System.out.println(split[1]);
+                System.out.println(split[2]);
+
+                printWriter.println("HTTP/1.1 200 OK");
+                printWriter.println("Content-type: text/html; charset=utf-8");
+                //По требованию протокола HTTP должны отправить пустую строку
+                printWriter.println();
+                printWriter.println("<h1>Добро пожаловать на наш сервер!</h1>");
+                printWriter.flush();
             }
 
-            printWriter.println("HTTP/1.1 200 OK");
-            printWriter.println("Content-type: text/html; charset=utf-8");
-            //По требованию протокола HTTP должны отправить пустую строку
-            printWriter.println();
-            printWriter.println("<h1>Добро пожаловать на наш сервер!</h1>");
-            printWriter.flush();
         }
 
-        System.out.println("Наш сервер закончил работу");
     }
 }
