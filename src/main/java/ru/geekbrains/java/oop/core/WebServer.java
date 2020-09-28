@@ -3,6 +3,7 @@ package ru.geekbrains.java.oop.core;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
@@ -12,14 +13,14 @@ public class WebServer {
         System.out.println("Наш сервер начал работу");
 
         ServerSocket serverSocket = new ServerSocket(8080);
-        Socket accept = serverSocket.accept();
+        Socket socket = serverSocket.accept();
 
 //        Можно считать поток байт
 //        нам нужно преобразовать чтобы мы могли читать текст
-//        accept.getInputStream()
+//        socket.getInputStream()
 
 //        Таким мы образом мы могли бы считывать посимвольно
-//        InputStreamReader inputStreamReader = new InputStreamReader(accept.getInputStream(), StandardCharsets.UTF_8);
+//        InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8);
 //        inputStreamReader.ready();
 //        inputStreamReader.read();
 
@@ -27,7 +28,9 @@ public class WebServer {
         //накапливать будет их уже построчно и в формате строки
 
         try (BufferedReader bufferedReader = new BufferedReader(
-                new InputStreamReader(accept.getInputStream(), StandardCharsets.UTF_8))) {
+                new InputStreamReader(socket.getInputStream(), StandardCharsets.UTF_8));
+             PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
+        ) {
 
             //ждем пока не заполнится строка
             while (!bufferedReader.ready()) ;
@@ -36,6 +39,12 @@ public class WebServer {
                 System.out.println(bufferedReader.readLine());
             }
 
+            printWriter.println("HTTP/1.1 200 OK");
+            printWriter.println("Content-type: text/html; charset=utf-8");
+            //По требованию протокола HTTP должны отправить пустую строку
+            printWriter.println();
+            printWriter.println("<h1>Добро пожаловать на наш сервер!</h1>");
+            printWriter.flush();
         }
 
         System.out.println("Наш сервер закончил работу");
